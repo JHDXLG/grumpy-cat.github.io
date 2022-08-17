@@ -1,8 +1,6 @@
 ### 写在前头
 
-攻略来自
-
-https://developer.mozilla.org/zh-CN/docs/Learn/HTML/Introduction_to_HTML/Getting_started
+攻略来自[MDN](https://developer.mozilla.org/zh-CN/docs/Learn/HTML/Introduction_to_HTML/Getting_started)
 
 在线的代码操场👇
 
@@ -154,4 +152,72 @@ https://roy-tian.github.io/learning-area/extras/tools/playable-code/
 ### 二.&lt;head&gt;标签里有什么？Metadata-HTML 中的元数据
 
 ----
+
+#### 什么是&lt;head&gt;标签
+
+HTML` <head> `元素与 `<body>`元素不同，它的内容不会在浏览器中显示，它的作用是保存页面的一些[元数据](https://developer.mozilla.org/zh-CN/docs/Glossary/Metadata)。
+
+
+
+#### 添加标题
+
+`<title>`是为文档添加标题，而` <h1> `是为了body添加标题，二者不同。
+
+* &lt;h1&gt;元素在页面加载完毕时显示在页面中，通常只出现一次，用来标记页面内容的标题（故事名称、新闻摘要，等等）。
+* &lt;title&gt;元素是一项元数据，用于表示整个 HTML 文档的标题（而不是文档内容）。
+
+
+
+#### 元数据：&lt;meta&gt;元素
+
+元数据就是描述数据的数据
+
+例如：指定你的文档中字符的编码
+
+```html
+<meta charset="utf-8">
+```
+
+添加作者和描述
+
+许多 `<meta>` 元素包含了 `name` 和 `content` 属性：
+
+- `name` 指定了 meta 元素的类型；说明该元素包含了什么类型的信息。
+
+- `content` 指定了实际的元数据内容。
+
+  ```html
+  <meta name="author" content="Chris Mills">
+  <meta name="description" content="The MDN Web Docs Learning Area aims to provide
+  complete beginners to the Web with all they need to know to get
+  started with developing web sites and applications.">
+  ```
+
+  
+
+#### 在HTMl中应用CSS和JavaScript
+
+css使用`<link>`元素,Js使用`<script>`元素
+
+* `<link>`元素经常位于文档的头部。这个 link 元素有 2 个属性，`rel="stylesheet"` 表明这是文档的样式表，而 `href` 包含了样式表文件的路径：
+
+```html
+<link rel="stylesheet" href="my-css-file.css">
+```
+
+* `<script>`元素放在`<head>`中包含 `src` 属性来指向需要加载的 JavaScript 文件路径，同时最好加上 `defer` 以告诉浏览器在解析完成 HTML 后再加载 JavaScript。
+
+```
+备注： <script> 元素看起来像一个空元素，但它并不是，因此需要一个结束标记。您还可以选择将脚本放入 <script>元素中，而不是指向外部脚本文件。
+```
+
+
+
+#### 为文档设定主语言
+
+通过添加`lang`属性到HTML开始的标签中来实现
+
+```html
+<html lang="zh-CN">
+```
 
